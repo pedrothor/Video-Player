@@ -38,13 +38,13 @@ async def videos():
         final_list = []
 
         # reading img
-        with open(r'C:\Users\pedro\PycharmProjects\video-player\backend\api\v1\teste.jpg', 'rb') as img:
+        with open(r'', 'rb') as img:
             img_bytes = img.read()
             img_base64 = base64.b64encode(img_bytes).decode('utf-8')
             res['img_base64'] = img_base64
 
         res['titulo'] = 'Test video player'
-        res['inserido_por'] = '@chico'
+        res['inserido_por'] = '@test'
         res['inserido_em'] = '25/02/2025 às 23:59:59'
 
         final_list.append(res)
@@ -60,7 +60,7 @@ async def get_video():
         res = {}
 
         # reading video
-        with open(r'C:\Users\pedro\PycharmProjects\video-player\backend\api\v1\Seoul - 21985.mp4', 'rb') as video:
+        with open(r'', 'rb') as video:
             video_bytes = video.read()
             video_base64 = base64.b64encode(video_bytes).decode('utf-8')
             res['video_b64'] = video_base64
@@ -73,7 +73,7 @@ async def get_video():
 @api.get("/videos/heavy/{video_id}")
 async def get_video_heavy(video_id, request: Request):
     # path
-    video_path = r"C:\Users\pedro\PycharmProjects\pythonProject\videos\CARLINHOS - TICARACATICAST EP EXTRA.mp4"
+    video_path = r""
 
     with open(video_path, 'rb') as video_file:
         video_bytes = video_file.read()
